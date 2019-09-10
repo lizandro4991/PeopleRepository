@@ -16,9 +16,11 @@ namespace People
             conn = new SQLiteConnection(dbPath);
             conn.CreateTable<Person>();
         }
+
+        //Method Create
         public void CreatePerson(Person newPerson)
         {
-
+            //Creamos el Metodo para Intertar Personas
             int result;
             result = conn.Insert(newPerson);
             if (result == 1)
@@ -29,7 +31,7 @@ namespace People
             }
             else
             {
-                StatusMessage = $"Registro No Insertado";
+                StatusMessage = "Registro No Insertado";
             }
         }
     }
